@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lunario</h1>
+    <h2>Suas leituras, pareceres e autores num só lugar.</h2>
+
+    <form action="/login" method="POST">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="">
+
+        <button type="submit">Entrar</button>
+        <a href="/signup">Criar conta</a>
+    </form>
+
+    <a href="/signup">Cadastre-se</a>
+
+    <a href="/terms">Termos e condições</a>
+</body>
+
+</html>

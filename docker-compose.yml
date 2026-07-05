@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db-lunario:
+    image: postgres:15-alpine
+    container_name: lunario-database
+    restart: always
+    environment:
+      POSTGRES_USER: lunario_user
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: lunario_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - lunario_data:/var/lib/postgresql/data
+
+  pgadmin-lunario:
+    image: dpage/pgadmin4
+    container_name: lunario-pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@lunario.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "8080:80"
+    depends_on:
+      - db-lunario
+
+volumes:
+  lunario_data:
