@@ -3,6 +3,7 @@ package br.com.lunario.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Entity
@@ -12,6 +13,8 @@ public class Author {
     private long id;
     private String name;
     private String country;
+
+    @OneToMany
     private List<Book> books;
 
     public long getId() {
@@ -45,6 +48,8 @@ public class Author {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+    protected Author() {}
 
     public Author(long id, String name, String country, List<Book> books) {
         this.id = id;

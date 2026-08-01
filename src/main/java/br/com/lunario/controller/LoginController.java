@@ -1,4 +1,4 @@
-package controller;
+package br.com.lunario.controller;
 
 import br.com.lunario.service.LoginService;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ public class LoginController {
 
     @GetMapping("/")
     public String index() {
-        return "/index.html";
+        return "index";
     }
 
     private final LoginService loginService;

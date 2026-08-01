@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db-lunario:
     image: postgres:15-alpine
@@ -12,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - lunario_data:/var/lib/postgresql/data
+      - lunario_data:/var/lib/postgresql/data      - lunario_data:/var/lib/postgresql/data
 
   pgadmin-lunario:
     image: dpage/pgadmin4
@@ -22,7 +20,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@lunario.com
       PGADMIN_DEFAULT_PASSWORD: adminpassword
     ports:
-      - "8080:80"
+      - "5050:80"
     depends_on:
       - db-lunario
 

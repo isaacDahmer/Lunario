@@ -3,13 +3,18 @@ package br.com.lunario.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "rewind")
 public class Rewind {
     @Id
     private long id;
+
+    @ManyToOne
     private User user;
+
+    @ManyToOne
     private Library library;
 
     public long getId() {
@@ -35,6 +40,8 @@ public class Rewind {
     public void setLibrary(Library library) {
         this.library = library;
     }
+
+    protected Rewind() {}
 
     public Rewind(long id, User user, Library library) {
         this.id = id;

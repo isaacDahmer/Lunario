@@ -43,6 +43,8 @@ public class User {
         this.password = password;
     }
 
+    protected User() {}
+
     public User(long id, String name, String email, String password) {
         this.id = id;
         this.name = name;

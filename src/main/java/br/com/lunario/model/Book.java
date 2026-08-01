@@ -76,6 +76,8 @@ public class Book {
         this.progress = progress;
     }
 
+    protected Book() {}
+
     public Book(long id, String title, String description, String isbn, String publisher, String subject, String genre, int progress) {
         this.id = id;
         this.title = title;

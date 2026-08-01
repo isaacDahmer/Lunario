@@ -3,14 +3,20 @@ package br.com.lunario.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "review")
 public class Review {
     @Id
     private long id;
+
+    @ManyToOne
     private User user;
+
+    @ManyToOne
     private Book book;
+
     private int rating;
     private String comment;
 
@@ -53,6 +59,8 @@ public class Review {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    protected Review() {}
 
     public Review(long id, User user, Book book, int rating, String comment) {
         this.id = id;

@@ -1,5 +1,17 @@
-spring.datasource.url=jdbc:postgresql://localhost:5432/lunario_db
-spring.datasource.username=lunario_user
-spring.datasource.password=password123
-# Faz o Hibernate criar as tabelas automaticamente baseado no seu código Java
-spring.jpa.hibernate.ddl-auto=update
+
+spring:
+  # Configuration for the application's database connection (PostgreSQL)
+  datasource:
+    # JDBC URL pointing to the PostgreSQL database container running on localhost port 5432
+    url: jdbc:postgresql://localhost:5432/lunario_db
+    # Username configured in the database/docker-compose to authenticate the connection
+    username: lunario_user
+    # Password matching the username for database authentication
+    password: password123
+
+  # Configuration for Java Persistence API (JPA) / Hibernate
+  jpa:
+    hibernate:
+      # Automatically creates/updates the database tables schema based on JPA entity annotations (@Entity) in your Java code.
+      # Note: 'update' is useful for development but should be avoided/changed to 'validate' or migrations (like Flyway/Liquibase) in production.
+      ddl-auto: update
